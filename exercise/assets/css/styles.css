@@ -1,6 +1,10 @@
-html, body{
+*{
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+body{
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
@@ -17,29 +21,19 @@ main{
 .papayawhip (color: #E1D9C6);
 .teal (color: #67A2B3);
 
-/* BACKGROUND COLOR */
-.background-color (color: #B0DBD4);
-.background-color (color: #C1E3D2);
-.background-color (color: #E9F5EB);
-.background-color (color: #E1D9C6);
-.background-color (color: #67A2B3);
+/* BACKGROUND COLORS */
+.bg-powderblue (background-color: #B0DBD4);
+.bg-mediumaquamarine (background-color: #C1E3D2);
+.bg-paleturquoise (background-color: #E9F5EB);
+.bg-papayawhip (background-color: #E1D9C6);
+.bg-teal (background-color: #67A2B3);
 
-
-.header{
+header{
+	width: 100%;
+	padding: 30px;
 	font-size: 18px;
 	background-color: #B0DBD4;
-	text-align: center;
-}
-
-a{
-	color: #E9F5EB;
-	text-decoration: none;
-}
-
-p{
-	font-family: 'Old Standard TT', serif;
-	font-size: 25px;
-	line-height: 20px;
+	align-items: center;
 }
 
 .container{
@@ -49,23 +43,69 @@ p{
 	text-align: center;
 }
 
-h1{
-	margin: 0;
-	letter-spacing: 3px;
-	padding-top: 10px;
-	padding-bottom: 0px;
+nav{ 
+	width: 100%;
+	padding: 0;
+	background-color: #67A2B3;
+}
+
+
+nav ul, li{
+	font-size: 20px;
+	padding: 10px;
+	text-align: center;	
+	display: inline-block;
 }
 
 .menu{
+	width: 100%;
 	text-align: center;
 	padding: 10px;
 	margin: 0px;
 }
 
-.nav ul li{
-	display: inline-block;	
-	font-size: 20px;
+a{
+	color: #C1E3D2;
+	text-decoration: none;
+	text-align: center;
+}
+
+p{
+	font-family: 'Old Standard TT', serif;
+	font-size: 18px;
+	line-height: 35px;
+}
+
+h1{
+	margin: 0;
+	letter-spacing: 3px;
+	padding: 20px;
+	background-color: #B0DBD4;
+	color: #000;
+	text-align: center;
+}
+
+h2{
+	text-align: center;
+	margin: 0;
 	padding: 10px;
+}
+
+h3{
+	margin: 10px;
+	text-align: center;
+}
+
+h4{
+	font-family: 'Old Standard TT', serif;
+	letter-spacing: 3px;
+}
+
+article, .univcampuses{
+	padding: 20px;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
 }
 
 .school p{
@@ -73,15 +113,33 @@ h1{
 	text-align: justify;
 }
 
-article{
-	padding: 10px;
+.logo{
 	width: 100%;
-	max-width: 800px;
-	margin: 0 auto;
+	max-width: 960px;	
+}
+
+.logo img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border: 7px solid #E1D9C6;
+	border-radius: 40px/45px;
+}
+
+.main-campus, .navybase-campus, .maryheights-campus{
+	display: inline-block;
+	width: 33%;
+	float: left;
+}
+
+.bldgs{
+	font-family: 'Old Standard TT', serif;
+	font-size: 18px;
+	line-height: 30px;
 }
 
 table{
-	width: 785px;
+	width: 100%;
 	border-collapse: collapse;
 }
 
@@ -101,48 +159,85 @@ td{
 	line-height: 50px;
 }
 
-h2{
-	font-size: 30px;
-	text-align: center;
-	margin: 0;
+.wrapper{
 	padding: 10px;
-}
-
-h3{
-	margin: 10px;
-	text-align: center;
-}
-
-h4{
-	font-size: 20px;
-}
-
-.bldgs{
-	font-family: 'Old Standard TT', serif;
-	font-size: 20px;
-	line-height: 33px;
-}
-
-.main-campus, .navybase-campus, .maryheights-campus{
-	display: inline-block;
-	width: 33%;
-	float: left;
-}
-
-.logo {
-	width: auto;
-	max-width: 800px;	
-}
-
-.logo img{
 	width: 100%;
-	height: 200px;
-	border: 10px solid #E1D9C6;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+section.lists{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.preview-container{
+	display: inline-block;
+	margin: 10px;
+}
+
+.listpreview-container {
+	height: 250px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	transition: opacity .3s ease-in-out;
+	cursor: pointer;
+	opacity: 1;
+	border: 8px solid #E1D9C6;
+	border-radius: 60px/75px;
+}
+
+.listpreview-container img{
+	width: 100%;
+	vertical-align: middle;
+	opacity: 0;
+}
+
+.listpreview-container:hover {
+	opacity: 0.7;
+}
+
+.listpreview-description{
+	background-color: black;
+	width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.name{
+	font-family: 'Old Standard TT', serif;
+	color: white;
+	line-height: 34px;
+	letter-spacing: 2px;
+	font-size: 18px;
 }
 
 footer{
-	padding: 5px;
 	background-color: #67A2B3;
-	color: black;
-	text-align: center;
+	padding: 10px;
+    text-align: center;
+ 	bottom: 0;
+}
+
+@media (max-width: 960px) {
+	section.lists{
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.listpreview-container {
+		height: 250px
+	}
+}
+
+@media (max-width: 600px) {
+	section.lists{
+		display: block;
+	}
 }
